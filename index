@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selamat Idul Fitri 1447 H - Tina Yunita</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- AOS Animation CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS (via CDN for layout efficiency) -->
+    <script>
+        // Mendefinisikan konfigurasi sebelum script CDN dimuat untuk mencegah ReferenceError
+        window.tailwind = {
+            config: {
+                theme: {
+                    extend: {
+                        colors: {
+                            emerald: {
+                                50: '#ecfdf5',
+                                100: '#d1fae5',
+                                500: '#10b981',
+                                700: '#047857',
+                                900: '#064e3b',
+                            },
+                            gold: '#fbbf24'
+                        },
+                        fontFamily: {
+                            'cute': ['Fredoka', 'sans-serif'],
+                            'body': ['Quicksand', 'sans-serif'],
+                        }
+                    }
+                }
+            }
+        };
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        /* Custom Styles & Overrides */
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background-color: #ecfdf5; /* emerald-50 */
+            color: #064e3b; /* emerald-900 */
+            overflow-x: hidden;
+            overscroll-behavior-y: none;
+        }
+
+        h1, h2, h3, .font-cute {
+            font-family: 'Fredoka', sans-serif;
+        }
+
+        /* Prevent scrolling before opening */
+        .no-scroll {
+            overflow: hidden;
+            height: 100vh;
+        }
+
+        /* Overlay / Cover Screen */
+        #cover-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /* Diperbarui: Menambahkan background gambar dengan overlay gradient hijau */
+            background: linear-gradient(135deg, rgba(4, 120, 87, 0.85) 0%, rgba(16, 185, 129, 0.85) 100%),
+                        url('https://images.unsplash.com/photo-1577563908411-5077b6dc7624?q=80&w=1080&auto=format&fit=crop') center/cover no-repeat;
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: transform 1s cubic-bezier(0.77, 0, 0.175, 1), opacity 0.8s ease;
+            color: white;
+            text-align: center;
+        }
+
+        .cover-slide-up {
+            transform: translateY(-100%);
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            position: relative;
+            min-height: 130vh; /* Diperbarui: Membuat hero lebih panjang dari tinggi layar normal */
+            padding: 5rem 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background-color: #064e3b;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+            pointer-events: none;
+        }
+        
+        /* Overlay agar teks tetap terbaca di atas video/gambar */
+        .parallax-overlay {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(to bottom, rgba(4, 120, 87, 0.4), rgba(6, 78, 59, 0.8));
+            z-index: 1; /* Diperbarui: Memastikan overlay selalu di atas gambar */
+        }
+
+        /* Floating Animation */
+        .floating {
+            animation: float 4s ease-in-out infinite;
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+
+        /* Soft transitions for images */
+        .gallery-img {
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            cursor: pointer;
+        }
+        .gallery-img:hover {
+            transform: scale(1.03) translateY(-5px);
+            box-shadow: 0 15px 30px rgba(4, 120, 87, 0.2);
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #d1fae5;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #10b981;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #047857;
+        }
+
+        /* Decorative shapes */
+        .shape {
+            position: absolute;
+            opacity: 0.1;
+            z-index: -1;
+        }
+    </style>
+</head>
+<body class="no-scroll">
+
+    <!-- COVER SCREEN / OPEN INVITATION -->
+    <div id="cover-screen">
+        <!-- Tambahkan id="cover-content" di sini -->
+        <div id="cover-content" class="p-6 max-w-md w-full" data-aos="zoom-in" data-aos-duration="1000">
+            <i class="fa-solid fa-moon text-5xl text-gold mb-6 floating"></i>
+            <h3 class="text-xl md:text-2xl font-body mb-2">Spesial Untuk:</h3>
+            <h1 class="text-4xl md:text-5xl font-cute font-bold mb-8 text-gold drop-shadow-md">Yukaakiyowo</h1>
+            <p class="mb-8 font-body text-emerald-100">Kamu menerima sebuah ucapan manis Idul Fitri 1447 H.</p>
+            <button id="open-btn" class="bg-gold text-emerald-900 font-cute font-semibold text-lg py-3 px-8 rounded-full hover:bg-white hover:text-emerald-700 transition-all duration-300 shadow-lg transform hover:-translate-y-1">
+                <i class="fa-solid fa-envelope-open-text mr-2"></i> Buka Ucapan
+            </button>
+        </div>
+
+        <!-- LOADING KETUPAT (Awalnya tersembunyi) -->
+        <div id="loading-screen" class="hidden absolute inset-0 flex-col justify-center items-center opacity-0 transition-opacity duration-500">
+            <div class="animate-bounce mb-8">
+                <!-- Membentuk ketupat dari grid kotak-kotak yang diputar -->
+                <div class="w-16 h-16 transform rotate-45 grid grid-cols-2 gap-1 drop-shadow-xl">
+                    <div class="bg-emerald-400 rounded-sm"></div>
+                    <div class="bg-gold rounded-sm"></div>
+                    <div class="bg-gold rounded-sm"></div>
+                    <div class="bg-emerald-400 rounded-sm"></div>
+                </div>
+            </div>
+            <p class="text-white font-cute text-xl animate-pulse tracking-widest drop-shadow-md">Membuka kenangan...</p>
+        </div>
+    </div>
+
+    <!-- HERO SECTION -->
+    <section class="hero-section relative">
+        <!-- Image Background yang diperbarui dengan sumber yang lebih stabil -->
+        <img src="https://images.unsplash.com/photo-1584551246679-0daf3d275d0f?q=80&w=1920&auto=format&fit=crop" 
+             class="hero-bg" 
+             alt="Pemandangan Masjid"
+             onerror="this.onerror=null; this.src='https://images.pexels.com/photos/2236688/pexels-photo-2236688.jpeg?auto=compress&cs=tinysrgb&w=1600&h=900&dpr=1';">
+        
+        <div class="parallax-overlay"></div>
+        <div class="relative z-10 text-center px-4" data-aos="fade-up" data-aos-duration="1500">
+            <div class="inline-block mb-6 bg-white/20 backdrop-blur-md p-4 rounded-full border border-white/30 floating">
+                <i class="fa-solid fa-mosque text-4xl text-white"></i>
+            </div>
+            <h2 class="text-2xl md:text-3xl text-emerald-100 font-cute mb-2">Selamat Hari Raya</h2>
+            <h1 class="text-5xl md:text-7xl font-cute font-bold text-gold drop-shadow-lg mb-4">Idul Fitri</h1>
+            <h3 class="text-xl md:text-2xl text-white font-body tracking-widest">1 Syawal 1447 H</h3>
+            
+            <div class="mt-12 animate-bounce text-white/70">
+                <p class="text-sm font-body mb-2">Scroll ke bawah</p>
+                <i class="fa-solid fa-chevron-down"></i>
+            </div>
+        </div>
+        
+        <!-- Decorative SVG at bottom -->
+        <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-[0]">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" class="w-full h-12 md:h-24 fill-emerald-50">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V95.8C79.81,118.92,197.8,111.41,321.39,56.44Z"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- GREETING & PRAYER SECTION -->
+    <section class="py-20 px-6 md:px-12 max-w-4xl mx-auto relative text-center">
+        <!-- Decoration -->
+        <i class="fa-solid fa-star shape text-emerald-200 text-6xl top-10 left-10"></i>
+        <i class="fa-solid fa-star shape text-emerald-200 text-4xl bottom-20 right-10"></i>
+
+        <div class="bg-white rounded-[3rem] p-8 md:p-12 shadow-xl border-4 border-emerald-100" data-aos="zoom-in-up" data-aos-duration="1000">
+            <h2 class="text-3xl md:text-4xl font-cute text-emerald-700 mb-6">For my partner, <span class="text-gold">Yukaa</span></h2>
+            
+            <div class="w-16 h-1 bg-emerald-300 mx-auto rounded-full mb-8"></div>
+            
+            <p class="text-lg md:text-xl leading-relaxed mb-6 text-gray-700 font-medium">
+                "Taqabbalallahu minna wa minkum shiyamana wa shiyamakum."
+            </p>
+            
+            <p class="text-base md:text-lg leading-relaxed text-gray-600 mb-4 text-justify md:text-center">
+                Gema takbir telah berkumandang memecah kesunyian malam, menandakan bulan suci Ramadhan yang penuh ampunan telah berlalu meninggalkan kita. Kini, fajar kemenangan 1 Syawal 1447 Hijriah telah menyingsing. Di hari yang fitri dan penuh keberkahan ini, izinkan aku menundukkan kepala dan merendahkan hati.
+            </p>
+
+            <p class="text-base md:text-lg leading-relaxed text-gray-600 mb-6 text-justify md:text-center">
+                Mungkin selama kita bersama, ada canda yang tanpa sengaja menggores luka, ada sikap atau kata yang tak pantas terucap, atau janji yang belum sempat tertunaikan. Sebagai manusia biasa yang tak luput dari salah dan khilaf, dari lubuk hati yang paling dalam, aku memohon maaf atas segala keburukan dan kekuranganku. Mari kita buka lembaran baru yang bersih.
+            </p>
+            
+            <h3 class="text-2xl font-cute text-emerald-600 my-8 bg-emerald-50 py-3 px-6 rounded-2xl inline-block border border-emerald-100">
+                Minal Aidin Wal Faizin,<br>Mohon Maaf Lahir & Batin 🙏
+            </h3>
+
+            <p class="text-base md:text-lg leading-relaxed text-gray-600 italic text-justify md:text-center">
+                Semoga Allah SWT senantiasa menerima seluruh amal ibadah puasa kita, melipatgandakan pahala kita, dan mempertemukan kita kembali dengan Ramadhan di tahun-tahun berikutnya dalam keadaan sehat wal afiat. Teriring doa tulus agar limpahan rahmat, rezeki yang barokah, serta kebahagiaan selalu menyertai langkahmu dan keluarga tercinta. Selamat menikmati momen hangat berkumpul dan berbagi tawa bersama orang-orang tersayang, Tina!
+            </p>
+        </div>
+    </section>
+
+    <!-- GALLERY SECTION -->
+    <section class="py-16 px-4 md:px-10 bg-emerald-700 relative overflow-hidden">
+        <!-- SVG Top divider -->
+        <div class="absolute top-0 left-0 w-full overflow-hidden leading-[0] transform rotate-180">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" class="w-full h-10 fill-emerald-50">
+                <path d="M1200,0H0V120H281.94C531,120,534.82,27.13,791.67,27.13,1018.66,27.13,1086.32,120,1200,120Z"></path>
+            </svg>
+        </div>
+
+        <div class="max-w-5xl mx-auto mt-12">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-cute text-gold mb-6">Memori Indah Bersama</h2>
+                
+                <div class="max-w-3xl mx-auto bg-emerald-800/40 p-6 md:p-8 rounded-3xl backdrop-blur-sm border border-emerald-600/50 shadow-lg">
+                    <p class="text-emerald-50 font-body leading-relaxed text-base md:text-lg italic text-justify md:text-center">
+                        "Di antara banyaknya tawa yang terekam, ada satu hal yang paling aku syukuri, yaitu kehadiranmu. Terima kasih banyak telah bersedia menemaniku selama ini. Saat duniaku terasa begitu sepi, kehebohan obrolan kita dari larut malam hingga kekonyolan saat kita bermain bersama selalu berhasil mengisi kekosongan itu. Beberapa foto di bawah ini adalah saksi manis, bagaimana layar yang dingin bisa terasa begitu hangat karena ada kamu yang selalu menemani."
+                    </p>
+                </div>
+            </div>
+
+            <!-- CSS Grid Gallery -->
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
+                <!-- Using lh3.googleusercontent.com for reliable Google Drive direct image embed -->
+                <div class="relative aspect-square overflow-hidden rounded-3xl border-4 border-emerald-500/30 gallery-img" data-aos="zoom-in" data-aos-delay="100">
+                    <img src="https://lh3.googleusercontent.com/d/1S5bX53UgihRRFOlVpQ7X4BOuoyuFisP3" 
+                         onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1564683214964-6fdd2362241b?q=80&w=400&auto=format&fit=crop';" 
+                         class="absolute inset-0 w-full h-full object-cover object-center" alt="Galeri 1">
+                </div>
+                <div class="relative aspect-square overflow-hidden rounded-3xl border-4 border-emerald-500/30 gallery-img" data-aos="zoom-in" data-aos-delay="200">
+                    <img src="https://lh3.googleusercontent.com/d/1o1tLRQb16sr5_B6Wwwz-NvtF_o3l9THL" 
+                         onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1596430588661-0b0c604b31cc?q=80&w=400&auto=format&fit=crop';" 
+                         class="absolute inset-0 w-full h-full object-cover object-center" alt="Galeri 2">
+                </div>
+                <div class="relative aspect-square overflow-hidden rounded-3xl border-4 border-emerald-500/30 gallery-img" data-aos="zoom-in" data-aos-delay="300">
+                    <img src="https://lh3.googleusercontent.com/d/1tUroEMph4liLqZLchxg9H4bPS4qIVt-J" 
+                         onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1584985223788-29472dc02213?q=80&w=400&auto=format&fit=crop';" 
+                         class="absolute inset-0 w-full h-full object-cover object-center" alt="Galeri 3">
+                </div>
+                <div class="relative aspect-square overflow-hidden rounded-3xl border-4 border-emerald-500/30 gallery-img" data-aos="zoom-in" data-aos-delay="400">
+                    <img src="https://lh3.googleusercontent.com/d/1E338GmZrgIN9qOQ35MSJuVyiXyvjfmPA" 
+                         onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1621213031070-dfc776fb082e?q=80&w=400&auto=format&fit=crop';" 
+                         class="absolute inset-0 w-full h-full object-cover object-center" alt="Galeri 4">
+                </div>
+                <div class="relative aspect-square overflow-hidden rounded-3xl border-4 border-emerald-500/30 gallery-img" data-aos="zoom-in" data-aos-delay="500">
+                    <img src="https://lh3.googleusercontent.com/d/11WUBtSsGkmyRBhQNpU7EuBKL3RfjAPMa" 
+                         onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1620241608701-94ef138c7ec9?q=80&w=400&auto=format&fit=crop';" 
+                         class="absolute inset-0 w-full h-full object-cover object-center" alt="Galeri 5">
+                </div>
+                <div class="relative aspect-square overflow-hidden rounded-3xl border-4 border-emerald-500/30 gallery-img" data-aos="zoom-in" data-aos-delay="600">
+                    <img src="https://lh3.googleusercontent.com/d/17ratkXf88m1lX13EjgO-gpExwONBuL8J" 
+                         onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1617260842606-25f0a0088df6?q=80&w=400&auto=format&fit=crop';" 
+                         class="absolute inset-0 w-full h-full object-cover object-center" alt="Galeri 6">
+                </div>
+            </div>
+        </div>
+        
+        <!-- SVG Bottom divider -->
+        <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-[0]">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" class="w-full h-10 fill-emerald-50">
+                <path d="M1200,0H0V120H281.94C531,120,534.82,27.13,791.67,27.13,1018.66,27.13,1086.32,120,1200,120Z"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- CLOSING SECTION & RSVP PROMPT -->
+    <section class="py-20 px-6 text-center relative">
+        <div class="max-w-2xl mx-auto" data-aos="fade-up">
+            <h2 class="text-3xl font-cute text-emerald-800 mb-6">Pesan Balasan</h2>
+            <p class="text-gray-600 mb-8 font-medium">Kirim balasan singkat dong.</p>
+            
+            <form id="rsvp-form" class="space-y-4">
+                <input type="text" value="Tina Yunita" readonly class="w-full px-5 py-3 rounded-xl border border-emerald-200 bg-emerald-50 text-emerald-800 font-semibold focus:outline-none">
+                <textarea id="pesan-balasan" rows="4" placeholder="Tulis ucapan balasanmu di sini..." class="w-full px-5 py-3 rounded-xl border border-emerald-200 focus:outline-none focus:ring-2 focus:ring-emerald-400 font-body transition-all" required></textarea>
+                <button type="submit" class="bg-emerald-600 hover:bg-emerald-700 text-white font-cute font-semibold text-lg py-3 px-8 rounded-full transition-all duration-300 shadow-md w-full md:w-auto inline-flex items-center justify-center gap-2 transform hover:-translate-y-1">
+                    <i class="fa-brands fa-whatsapp"></i> Kirim Pesan via WA
+                </button>
+            </form>
+        </div>
+        <p class="mt-16 text-sm text-emerald-600/60 font-medium">Dibuat dengan ❤️ untuk menyambut hari kemenangan.</p>
+    </section>
+
+    <!-- IMAGE MODAL (LIGHTBOX) -->
+    <div id="image-modal" class="fixed inset-0 z-[10000] bg-black/95 hidden flex-col justify-center items-center opacity-0 transition-opacity duration-300">
+        <button id="close-modal" class="absolute top-4 right-6 text-white hover:text-gold text-5xl focus:outline-none transition-transform hover:scale-110">&times;</button>
+        <img id="modal-img" src="" alt="Enlarged Image" class="max-w-[95vw] max-h-[85vh] object-contain rounded-2xl shadow-2xl transform scale-95 transition-transform duration-300">
+    </div>
+
+    <!-- Scripts -->
+    <!-- AOS Animation script -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+        // 1. Initialize AOS Animation
+        AOS.init({
+            once: false,
+            mirror: true,
+            offset: 50
+        });
+
+        // 2. Cover Screen & "Buka Ucapan" Button Logic
+        const openBtn = document.getElementById('open-btn');
+        const coverScreen = document.getElementById('cover-screen');
+        const coverContent = document.getElementById('cover-content'); // Mengambil elemen konten cover
+        const loadingScreen = document.getElementById('loading-screen'); // Mengambil elemen loading
+        const bodyElement = document.body;
+
+        openBtn.addEventListener('click', () => {
+            // 1. Tambahkan animasi 3D seperti kartu terbuka/jatuh ke depan pada konten
+            coverContent.style.transition = 'transform 0.6s ease-in, opacity 0.5s ease-in';
+            coverContent.style.transform = 'perspective(600px) rotateX(90deg) scale(1.1)';
+            coverContent.style.opacity = '0';
+            
+            // 2. Munculkan animasi loading ketupat setelah kartu awal menghilang
+            setTimeout(() => {
+                coverContent.style.display = 'none'; // Hilangkan kartu dari layar
+                loadingScreen.classList.remove('hidden');
+                loadingScreen.classList.add('flex');
+                
+                // Memicu fade-in perlahan
+                setTimeout(() => {
+                    loadingScreen.classList.remove('opacity-0');
+                    loadingScreen.classList.add('opacity-100');
+                }, 50);
+            }, 600); // Menunggu animasi jatuh (0.6 detik)
+            
+            // 3. Beri jeda agak lama (sekitar 3 detik) untuk memamerkan animasi ketupat, lalu buka layarnya
+            setTimeout(() => {
+                coverScreen.classList.add('cover-slide-up');
+            }, 3500); // 600ms + 2900ms waktu loading
+            
+            // 4. Kembalikan fungsi scroll halaman setelah layar benar-benar terbuka
+            setTimeout(() => {
+                bodyElement.classList.remove('no-scroll');
+            }, 4500);
+        });
+
+        // 3. RSVP Form Logic (WhatsApp Forwarding)
+        const rsvpForm = document.getElementById('rsvp-form');
+        rsvpForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const message = document.getElementById('pesan-balasan').value;
+            const textToWa = `Halo, saya Tina Yunita! Terima kasih atas ucapan Idul Fitrinya. %0A%0A"${message}"`;
+            
+            // Replace with your actual WhatsApp Number (Format: 628xxxxxxxxxx)
+            const targetWaNumber = "6285156501355"; 
+            
+            const waUrl = `https://wa.me/${targetWaNumber}?text=${textToWa}`;
+            window.open(waUrl, '_blank');
+        });
+
+        // 5. Lightbox / Image Modal Logic
+        const modal = document.getElementById('image-modal');
+        const modalImg = document.getElementById('modal-img');
+        const closeModalBtn = document.getElementById('close-modal');
+        const galleryImages = document.querySelectorAll('.gallery-img img');
+
+        galleryImages.forEach(img => {
+            // Ubah kursor menjadi pointer untuk menandakan gambar bisa diklik
+            img.style.cursor = 'pointer';
+            
+            img.addEventListener('click', function() {
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+                
+                // Timeout singkat untuk memicu animasi CSS transisi yang halus
+                setTimeout(() => {
+                    modal.classList.remove('opacity-0');
+                    modalImg.classList.remove('scale-95');
+                    modalImg.classList.add('scale-100');
+                }, 10);
+                
+                // Set sumber gambar modal sesuai dengan gambar yang baru saja diklik
+                modalImg.src = this.src;
+                
+                // Cegah halaman belakang agar tidak bisa di-scroll saat modal gambar terbuka
+                document.body.style.overflow = 'hidden'; 
+            });
+        });
+
+        function closeModal() {
+            // Mulai animasi menyembunyikan
+            modal.classList.add('opacity-0');
+            modalImg.classList.remove('scale-100');
+            modalImg.classList.add('scale-95');
+            
+            // Tunggu animasi CSS selesai sebelum benar-benar menghilangkan elemen
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+                document.body.style.overflow = ''; // Kembalikan scroll halaman
+            }, 300);
+        }
+
+        // Tutup saat tombol silang (X) diklik
+        closeModalBtn.addEventListener('click', closeModal);
+        
+        // Tutup modal jika area luar gambar (area gelap) diklik
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+</html>
